@@ -30,11 +30,12 @@ func calculateResult (firstNumber numberOne: Int, andSecondNumber numberTwo: Int
     case .addition: result += numberTwo
     case .substraction: result -= numberTwo
     case .multiplication: result *= numberTwo
-    case .division: result /= numberTwo
+    case .division: numberTwo != 0 ? result /= numberTwo : print("can't devide by zero")
     }
     print("Result:   \(numberOne) \(calculationType.rawValue) \(numberTwo) = \(result)")
     return result
 }
+
 
 /*
 Exercise 1.2
@@ -45,7 +46,8 @@ Call func 4 times for all calculateResult
 calculateResult(firstNumber: 3, andSecondNumber: 3, withCalculationType: .addition)
 calculateResult(firstNumber: 2, andSecondNumber: 3, withCalculationType: .substraction)
 calculateResult(firstNumber: 3, andSecondNumber: 3, withCalculationType: .multiplication)
-calculateResult(firstNumber: 3, andSecondNumber: 3, withCalculationType: .division)
+calculateResult(firstNumber: 3, andSecondNumber: 0, withCalculationType: .division)
+
 
 /*
 Exercise 2
